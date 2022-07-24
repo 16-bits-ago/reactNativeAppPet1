@@ -11,7 +11,8 @@ const PostNavigator = createStackNavigator(
         }
     },
     {
-        initialRouteName: 'Main'
+        initialRouteName: 'Main',
+        /* headerMode: 'none' */
     }
 );
 

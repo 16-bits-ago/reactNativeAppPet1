@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { bootstrap } from './src/bootstrap';
 import { AppNavigation } from './src/navigation/AppNavigation';

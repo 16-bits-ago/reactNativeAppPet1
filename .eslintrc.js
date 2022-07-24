@@ -38,6 +38,7 @@ module.exports = {
         'arrow-spacing': 'warn',
         'key-spacing': ['warn', { afterColon: true }],
         'comma-spacing': ['warn', { before: false, after: true }],
-        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }]
+        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+        'react/prop-types': ['error', { ignore: ['navigation'] }]
     }
 };

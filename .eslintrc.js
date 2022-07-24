@@ -1,15 +1,14 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        node: true
     },
     extends: [
         'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended'
+        'plugin:react/recommended'
     ],
-    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
             jsx: true
@@ -18,8 +17,7 @@ module.exports = {
         sourceType: 'module'
     },
     plugins: [
-        'react',
-        '@typescript-eslint'
+        'react'
     ],
     settings: {
         react: {
@@ -39,6 +37,7 @@ module.exports = {
         'object-curly-spacing': ['warn', 'always'],
         'arrow-spacing': 'warn',
         'key-spacing': ['warn', { afterColon: true }],
-        'comma-spacing': ['warn', { before: false, after: true }]
+        'comma-spacing': ['warn', { before: false, after: true }],
+        'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }]
     }
 };

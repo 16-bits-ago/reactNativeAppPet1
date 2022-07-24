@@ -5,14 +5,14 @@ import { PostScreen } from '../screens/PostScreen';
 
 const PostNavigator = createStackNavigator(
     {
-    Main: MainScreen,
-    Post: {
-        screen: PostScreen
-    }
+        Main: MainScreen,
+        Post: {
+            screen: PostScreen
+        }
     },
     {
         initialRouteName: 'Main'
     }
-)
+);
 
-export const AppNavigation = createAppContainer(PostNavigator)
+export const AppNavigation = createAppContainer(PostNavigator);

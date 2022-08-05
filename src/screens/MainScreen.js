@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { DATA } from '../data';
+import { Post } from '../components/Post';
 
 /* MainScreen.propTypes = {
     navigation: PropTypes.object.isRequired,
@@ -13,10 +15,28 @@ export const MainScreen = ({ navigation }) => {
     };
 
     return (
-        <View style={styles.center}>
+        <View style={styles.wrapper}>
+            {/* {
+                DATA.map((el, i) => (
+                    <View key={i}>
+                        {
+                            el.date &&
+                            <>
+                                <Text>
+                                    {el.text}
+                                </Text>
+                            </>
+                            
+                        } 
+                    </View>
+                ))
+            } */}
+            <FlatList 
+                data={DATA} 
+                keyExtractor={post => post.id.toString()}
+                renderItem={({ item }) => <Post post={item}/>}
+            />
             <StatusBar style="auto" />
-            <Text>Main Screen</Text>
-            <Button title='Go To Post' onPress={goToPost}/>
         </View>
     );
 };
@@ -26,10 +46,8 @@ MainScreen.navigationOptions ={
 };
 
 const styles = StyleSheet.create({
-    center: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+    wrapper: {
+        padding: 10
     },
 });
   

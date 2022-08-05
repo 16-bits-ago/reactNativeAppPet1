@@ -4,21 +4,30 @@ import { StatusBar } from 'expo-status-bar';
 import { THEME } from '../theme';
 
 // eslint-disable-next-line no-empty-pattern
-export const PostScreen = ({}) => {
+export const PostScreen = ({ navigation }) => {
+
+    const postId = navigation.getParam('postId');
+
     return (
         <View style={styles.center}>
-            <Text>Post Screen</Text>
+            <Text>Post Screen № {postId}</Text>
             <StatusBar style="auto" />
         </View>
     );
 };
 
-PostScreen.navigationOptions ={
-    headerTitle: 'Пост номер 42',
-    headerStyle: {
+PostScreen.navigationOptions = ({ navigation }) => {
+    const postId = navigation.getParam('postId');
+    const date = navigation.getParam('date');
+    return { 
+        headerTitle: `Пост номер ${postId} был создан ${new Date(date).toLocaleDateString()}`,
+    };
+
+    
+    /* headerStyle: {
         backgroundColor: THEME.DANGER_COLOR
     },
-    headerTintColor: '#fff'
+    headerTintColor: '#fff' */
 };
 
 const styles = StyleSheet.create({
